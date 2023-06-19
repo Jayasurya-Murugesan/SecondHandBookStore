@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.SqlServer.Server;
+using System;
 using System.Collections.Generic;
+using System.EnterpriseServices.Internal;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -28,11 +30,19 @@ namespace SeondHandBookStorePortal.Controllers
 
             return View();
         }
+        [HttpGet]
         public ActionResult LogIn()
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult LogIn(string userName, string password )
+        {
+            if (userName == "Admin" || password == "admin123")
+            {
 
-       
+            }
+            return View();
+        }
     }
 }
